@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/*
+ * Jizhi Home — light tech theme.
+ * CSS-variable driven so a future dark mode is a single class flip.
+ */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, "SFMono-Regular",
+    "Consolas", monospace;
+}
+
+:root {
+  /* surfaces */
+  --bg: #f7f9fc;
+  --bg-elevated: #ffffff;
+  --panel: #ffffff;
+  --sidebar: #0f172a;
+  --sidebar-fg: #cbd5e1;
+  --sidebar-active: #06b6d4;
+
+  /* text */
+  --fg: #0f172a;
+  --fg-muted: #64748b;
+  --fg-subtle: #94a3b8;
+
+  /* accents (tech cyan / electric blue) */
+  --primary: #0891b2;
+  --primary-hover: #0e7490;
+  --primary-soft: #ecfeff;
+  --accent: #3b82f6;
+
+  /* lines & feedback */
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --ring: #22d3ee;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --radius: 10px;
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04),
+    0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* subtle tech grid backdrop for the main content area */
+.tech-grid {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-subtle);
+}
+
+/* Reasoning / thinking pulse animation */
+@keyframes reasoning-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes tool-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-reasoning {
+  animation: reasoning-pulse 1.5s ease-in-out infinite;
+}
+
+.animate-tool-spin {
+  animation: tool-spin 1s linear infinite;
+}

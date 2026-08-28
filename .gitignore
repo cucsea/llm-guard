@@ -1,0 +1,124 @@
+# === 安全敏感文件 ===
+.env
+.env.*
+auth.json
+auth.lock
+*.pem
+*.ppk
+*.key
+
+# === 运行时状态 ===
+state.db*
+kanban.db*
+verification_evidence.db
+processes.json
+*.lock
+context_length_cache.yaml
+models_dev_cache.json
+ollama_cloud_models_cache.json
+.hermes_history
+.update_check
+
+# === 日志 ===
+logs/
+*.log
+
+# === 会话与运行时数据 ===
+sessions/
+spawn-trees/
+cron/output/
+sandboxes/
+pairing/
+
+# === 缓存 ===
+cache/
+audio_cache/
+image_cache/
+images/
+
+# === 依赖与构建产物 ===
+**/node_modules/
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+python_embedded/
+hermes-agent/python_embedded/
+hermes-agent/node_modules/
+hermes-agent/web-home/node_modules/
+hermes-agent/hermes_cli/web_dist/
+hermes-agent/ui-tui/dist/
+hermes-agent/apps/desktop/build/
+hermes-agent/apps/desktop/dist/
+hermes-agent/apps/desktop/release/
+hermes-agent/hermes_agent.egg-info/
+hermes-agent/plugins/*/dashboard/dist/
+lsp/node_modules/
+*.egg-info/
+
+# === 配置备份 ===
+config.yaml
+config.yaml.bak*
+cli-config.yaml
+
+# === 生成文件 ===
+fields_raw.html
+news_results.html
+*.bak
+
+# === Skills 运行时 ===
+skills/.hub/
+skills/.curator_backups/
+skills/.curator_state
+skills/.usage.json
+skills/.usage.json.lock
+
+# === 便携版工具 ===
+PortableGit/
+
+# === LSP 配置 ===
+lsp/
+
+# === 开发工具 ===
+.vscode/
+.codex/
+.cursor/
+.gemini/
+.zed/
+.mcp.json
+opencode.json
+
+# === 测试相关 ===
+.pytest_cache/
+test_durations.json
+tests/quick_test_dataset.jsonl
+tests/sample_dataset.jsonl
+
+# === 网站构建产物 ===
+website/static/api/skills-index.json
+website/static/api/skills.json
+website/static/api/skills-meta.json
+website/static/api/automation-blueprints-index.json
+
+# === 桌面应用 ===
+apps/desktop/demo/
+
+# === PR 信息图 ===
+infographic/
+
+# === Nix ===
+.direnv/
+.nix-stamps/
+result
+
+# === 其他 ===
+.hermes/
+.hermes-bootstrap-complete
+.hermes-sandbox/
+.update-incomplete
+.update-incomplete.lock
+scripts/out/
+RELEASE_v*.md
+mini-swe-agent/
+models-dev-upstream/
+hermes_cli/tui_dist/*
